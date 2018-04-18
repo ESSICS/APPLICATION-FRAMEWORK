@@ -19,7 +19,7 @@ pipeline {
                                  string(credentialsId: 'gpg-passphrase', variable: 'GPG_PASSPHRASE'),
                                  usernamePassword(credentialsId: 'maven-central', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
                     sh 'gpg --import ${GPG_PRIVATE_KEY}'
-                    sh "mvn --batch-mode -Dgpg.passphrase='${GPG_PASSPHRASE}' -Dserver.id=ossrh -Dserver.username=${USERNAME} -Dserver.password='${PASSWORD}' clean deploy"
+                    sh "mvn --batch-mode -DskipTests -Dgpg.passphrase='${GPG_PASSPHRASE}' -Dserver.id=ossrh -Dserver.username=${USERNAME} -Dserver.password='${PASSWORD}' clean deploy"
                 }
             }
         }
