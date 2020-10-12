@@ -50,7 +50,7 @@
 		<asm.version>7.1</asm.version>
 		<!-- Dependencies Versions -->
 		<assertj.version>3.12.2</assertj.version>
-		<junit.version>4.12</junit.version>
+		<junit.version>4.13.1</junit.version>
 	</properties>
 
 	<modules>
